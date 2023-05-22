@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Gerekli CSS bağlantıları -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-end mb-3">
+            <button class="btn btn-primary" id="createNewBtn">Create New</button>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>FName</th>
+                    <th>LName</th>
+                    <th>BirthDate</th>
+                    <th>Gpa</th>
+                    <th>NameSurName</th>
+                    <th>Advisor</th>
+                    <th>DeptCodeNavigation</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>1990-01-01</td>
+                    <td>3.5</td>
+                    <td>John Doe</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="advisorDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Advisor
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="advisorDropdown">
+                                <a class="dropdown-item" href="#">Advisor 1</a>
+                                <a class="dropdown-item" href="#">Advisor 2</a>
+                                <a class="dropdown-item" href="#">Advisor 3</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td>ABC123</td>
+                    <td>
+                        <button class="btn btn-primary">Read</button>
+                        <button class="btn btn-success">Update</button>
+                        <button class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Gerekli JavaScript bağlantıları -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Create New butonuna tıklandığında yeni bir satır eklenmesi için event listener tanımlanır
+        document.getElementById("createNewBtn").addEventListener("click", function () {
+            // Yeni bir satır oluşturulur
+            var newRow = document.createElement("tr");
+
+            // Yeni satıra hücreler eklenir
+            newRow.innerHTML = `
+                        <td>New First Name</td>
+                        <td>New Last Name</td>
+                        <td>New Birth Date</td>
+                        <td>New GPA</td>
+                        <td>New Name Surname</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="advisorDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Advisor
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="advisorDropdown">
+                                    <a class="dropdown-item" href="#">Advisor 1</a>
+                                    <a class="dropdown-item" href="#">Advisor 2</a>
+                                    <a class="dropdown-item" href="#">Advisor 3</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>New Dept Code Navigation</td>
+                        <td>
+                            <button class="btn btn-primary">Read</button>
+                            <button class="btn btn-success">Update</button>
+                            <button class="btn btn-danger">Delete</button>
+                        </td>
+                    `;
+
+            // Yeni satırı tabloya eklenir
+            document.getElementById("myTable").appendChild(newRow);
+        });
+    </script>
+</body>
+</html>
+
