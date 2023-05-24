@@ -13,6 +13,7 @@ namespace MvcApp.Models.Repositories
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IAdvisorRepository, AdvisorRepository>();
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            services.AddScoped<ISubjectRepository, SubjectRepository>();
         }
     }
 }

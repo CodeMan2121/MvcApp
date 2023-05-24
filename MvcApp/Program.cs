@@ -1,7 +1,11 @@
+using MvcApp.Models.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.ConfigureServices();
 
 var app = builder.Build();
 

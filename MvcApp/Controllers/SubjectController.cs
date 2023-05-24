@@ -2,7 +2,7 @@
 
 namespace MvcApp.Controllers
 {
-    public class PrivacyController : Controller
+    public class SubjectController : Controller
     {
         public IActionResult Index()
         {
