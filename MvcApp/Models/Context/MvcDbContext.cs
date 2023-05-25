@@ -5,7 +5,6 @@ namespace MvcApp.Models.Context
 {
     public class MvcDbContext : DbContext
     {
-        DbSet<Student> Students { get; set; }
         DbSet<Advisor> Advisors { get; set; } 
         DbSet<Department> Departments { get; set; }
         DbSet<Subject> Subjects { get; set; }
@@ -23,7 +22,7 @@ namespace MvcApp.Models.Context
             modelBuilder.Entity<Advisor>(a =>
             {
                 a.ToTable("Advisors").HasKey(s => s.Id);
-                a.Property(p => p.Id).HasColumnName("Id");
+                a.Property(p => p.Id).HasColumnName ("Id");
                 a.Property(p => p.FName).HasColumnName("FName");
                 a.Property(p => p.LName).HasColumnName("LName");
             });
@@ -34,12 +33,12 @@ namespace MvcApp.Models.Context
                 a.Property(p => p.DeptName).HasColumnName("DeptName");
                 a.Property(p => p.DeptCodeNavigation).HasColumnName("DeptCodeNavigation");
             });
-            modelBuilder.Entity<Student>(a =>
-            {
-                a.ToTable("Students").HasKey(s => s.Id);
-                a.Property(p => p.Id).HasColumnName("Id");
-                a.Property(p => p.StudentName).HasColumnName("StudentName");
-            });
+            //modelBuilder.Entity<Student>(a =>
+            //{
+            //    a.ToTable("Students").HasKey(s => s.Id);
+            //    a.Property(p => p.Id).HasColumnName("Id");
+            //    a.Property(p => p.StudentName).HasColumnName("StudentName");
+            //});
             modelBuilder.Entity<Subject>(a =>
             {
                 a.ToTable("Subjects").HasKey(a => a.Id);

@@ -10,7 +10,6 @@ namespace MvcApp.Models.Repositories
         public static void ConfigureServices(this IServiceCollection services)
         {
             services.AddDbContext<MvcDbContext>();
-            services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IAdvisorRepository, AdvisorRepository>();
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
             services.AddScoped<ISubjectRepository, SubjectRepository>();
